@@ -1,0 +1,10 @@
+.MainPage {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 800px) {
+  .MainPage {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,7 @@
+const Type = {
+  ADD_RECORD: "ADD_RECORD",
+  DELETE_RECORD: "DELETE_RECORD",
+  LOADER_ON: "LOADER_ON",
+  LOADER_OFF: "LOADER_OFF",
+};
+export default Type;
