@@ -1,9 +1,12 @@
+$arrowSize: 22px;
+
 .Tab {
   display: block;
   width: fit-content;
   border-radius: 5px;
   margin-top: 10px;
   min-width: 320px;
+  font-size: 90%;
 }
 
 table {
@@ -12,11 +15,13 @@ table {
 
 th, td {
   padding: 7px;
+  padding-left: 20px;
   width: 200px;
   text-align: center;
 }
 
 th {
+  position: relative;
   background-color: rgb(0, 107, 18);
   color: #fff;
   text-transform: uppercase;
@@ -32,4 +37,31 @@ td {
 
 tr:nth-child(2n) td {
   background-color: rgb(240, 240, 255);
+}
+
+.arrow {
+  display: block;
+  position: absolute;
+  height: $arrowSize;
+  width: $arrowSize;
+  left: 1px;
+  top: 50%;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.delete {
+  color: #fff;
+ border-radius: 10px;
+ background-color: rgb(112, 0, 0);
+ border: none;
+ outline: none;
+ box-shadow: 3px 3px 3px #444;
+  &:hover {
+    box-shadow: 2px 2px 2px #444;
+  }
+  &:active {
+    box-shadow: 1px 1px 1px #444;
+  }
 }

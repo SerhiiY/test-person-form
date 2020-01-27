@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { toast } from 'react-toastify';
-import styles from './style.module.css';
+import styles from './style.module.scss';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import toggle from '../HOC/toggle';

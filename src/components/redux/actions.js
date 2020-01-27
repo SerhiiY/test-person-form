@@ -10,6 +10,15 @@ export const deleteRecord = id => ({
   payload: id,
 });
 
+export const sortRecords = ({colName, sortType}) => ({
+  type: Type.SORT_RECORDS,
+  payload: {colName, sortType},
+});
+
+export const getRecords = () => ({
+  type: Type.GET_RECORDS,
+})
+
 export const loaderOn = () => ({
   type: Type.LOADER_ON,
 });

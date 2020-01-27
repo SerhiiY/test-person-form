@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from '../Form/style.module.css';
+import styles from '../Form/style.module.scss';
 
 const toggle = BaseComponent => {
   return class Toggle extends Component {

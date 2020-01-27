@@ -4,10 +4,28 @@ import uuid from 'uuid';
 
 const records = (state = [], action) => {
   switch (action.type) {
+
     case Type.ADD_RECORD:
-      return [...state, {...action.payload, id: uuid()}];
+      const newState = [...state, { ...action.payload, id: uuid() }];
+      localStorage.setItem('records', JSON.stringify(newState));
+      return newState;
+    
     case Type.DELETE_RECORD:
-      return state.filter(record => record.id !== action.payload);
+      const filteredState = state.filter(record => record.id !== action.payload);
+      localStorage.setItem('records', JSON.stringify(filteredState));
+      return filteredState;
+    
+    case Type.SORT_RECORDS:
+      const { colName, sortType } = action.payload;
+      const sortedState = sortType === 'z-a'
+        ? state.sort((a, b) => a[colName] < b[colName] ? 1 : -1)
+        : state.sort((a, b) => a[colName] > b[colName] ? 1 : -1)
+      return sortedState;
+    
+    case Type.GET_RECORDS:
+      const parsedState = JSON.parse(localStorage.getItem('records'));
+      return parsedState;
+    
     default: return state;
   }
 }
