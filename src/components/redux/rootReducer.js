@@ -24,7 +24,7 @@ const records = (state = [], action) => {
     
     case Type.GET_RECORDS:
       const parsedState = JSON.parse(localStorage.getItem('records'));
-      return parsedState;
+      return parsedState || state;
     
     default: return state;
   }
